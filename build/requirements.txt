@@ -1,0 +1,22 @@
+###############################
+#                             #
+# PYTHON PROJECT REQUIREMENTS #
+#                             #
+###############################
+
+This project requires the "lib" folder to be intact.
+
+It also requires the following Python standard libraries:
+
+1. OS
+2. sys
+3. time
+
+It requires no external packages.
+
+
+The program can be built with Makefile.py in this directory. It will be built to a PyC file for use on your system, with
+your python installation.
+
+You may need to rebuild for other platforms/installs, specifically different Python versions (especially older ones) and
+CPU architechtures.
