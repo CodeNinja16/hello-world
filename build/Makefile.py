@@ -57,7 +57,7 @@ if __name__ == "__main__":
     if target == "clean":
         # To be implemented
         pass
-    elseif target == "build":
+    elif target == "build":
         build_main()
     else:
         print("Invalid build target")
