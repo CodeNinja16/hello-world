@@ -60,8 +60,7 @@ if __name__ == "__main__":
     elif target == "build":
         build_main()
     else:
-        print("Invalid build target")
-        print("Could not compile because a valid build target was not entered")
+        error_msg("Unspecified or invalid build target")
         
 print("Build succeeded")
 pause_thread()
