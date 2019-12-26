@@ -45,12 +45,17 @@ def compile_main():
     
     # Try and compile our main file
     try:
-        py_compile.compile('__main__.py', cfile=os.getcwd() + "\\build\\Main.pyc")
+        py_compile.compile('__main__.py', cfile=os.getcwd() + "\\Main.pyc")
     except Exception as e:
         error_msg("Error during compilation: " + str(e))
         
 def clean():
-    pass
+    # Change directory to root
+    os.chdir(os.getcwd() + "\..")
+
+    os.remove("Main.pyc")
+	
+    print("Cleaned build files and removed compilation result")
     
          
 if __name__ == "__main__":
@@ -62,12 +67,11 @@ if __name__ == "__main__":
     # MAIN TARGET LOOP
     
     if target == "clean":
-        # To be implemented
-        pass
+        clean()
     elif target == "build":
         compile_main()
     else:
         error_msg("Unspecified or invalid build target")
         
-print("Build succeeded")
+print("Task succeeded")
 pause_thread()
