@@ -12,6 +12,13 @@ import py_compile
 # Command line args
 args = sys.argv # Shorthand
 
+# Check command line args are present
+if len(args) < 2:
+	print("E: No build target specified")
+	print("Please specify at least one option")
+	
+	quit()
+
 script = args[0] # Current script name
 target = args[1] # Current build target
 flags = [] # Populated if needed
@@ -33,14 +40,14 @@ def error_msg(detail):
 def compile_main():
     
     # Change directory to root
-    os.chdir(os.getcwd() + "..")
+    os.chdir(os.getcwd() + "\..")
     print("Attempting to compile from " + os.getcwd())
     
     # Try and compile our main file
     try:
-        py_compile.compile('__main__.py', cfile=os.getcwd() + "build/Main.pyc")
-    except:
-        error_msg("Error during compilation")
+        py_compile.compile('__main__.py', cfile=os.getcwd() + "\\build\\Main.pyc")
+    except Exception as e:
+        error_msg("Error during compilation: " + str(e))
         
 def clean():
     pass
@@ -58,7 +65,7 @@ if __name__ == "__main__":
         # To be implemented
         pass
     elif target == "build":
-        build_main()
+        compile_main()
     else:
         error_msg("Unspecified or invalid build target")
         
