@@ -60,7 +60,7 @@ def clean():
          
 if __name__ == "__main__":
     print("Test python makefile experiment")
-    print("By CodeNinja16")
+    print("By OverEngineeredCode")
     
     parse_flags() # We don't actually need the flags yet
     
